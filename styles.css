@@ -460,3 +460,12 @@ footer a:hover{color:var(--coral)}
 @media (max-width:680px){
   .fc{box-shadow:calc(var(--sx,12px) / 2) calc(var(--sy,12px) / 2) 0 var(--coral)}
 }
+
+/* Holo Rare art: Miaow cut out over a brand foil that shifts with tilt; she stays matte (sits above the shared shine) */
+.fc-studio .fc-art{background:
+  repeating-linear-gradient(115deg,transparent 0 7px,color-mix(in srgb,var(--paper) 28%,transparent) 7px 8px),
+  repeating-conic-gradient(from calc(var(--ry) * 3) at 50% 115%,color-mix(in srgb,var(--paper) 22%,transparent) 0 3deg,transparent 3deg 9deg),
+  linear-gradient(115deg,var(--sulphur),var(--coral) 25%,var(--sulphur) 50%,var(--coral) 75%,var(--sulphur));
+  background-size:auto,auto,300% 100%;
+  background-position:0 0,0 0,var(--gx) 0}
+.fc-studio .fc-art img{position:relative;z-index:3}
