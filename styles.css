@@ -443,3 +443,34 @@ footer a:hover{color:var(--coral)}
   .form-tab{scroll-snap-align:start}
   .form-tab[aria-selected="true"]{box-shadow:6px 6px 0 var(--coral)}
 }
+
+/* ---------- Card flip: picking a form turns the card over from its back ---------- */
+.flip{position:relative;transform-style:preserve-3d}
+.flip > article{backface-visibility:hidden}
+.flip.flip-in{animation:flip-in .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes flip-in{from{transform:rotateY(-180deg)}to{transform:rotateY(0)}}
+.card-back{position:absolute;inset:0;display:grid;place-items:center;background:var(--ink);box-shadow:inset 0 0 0 10px var(--ink),inset 0 0 0 14px var(--coral),12px 12px 0 var(--coral);transform:rotateY(180deg);backface-visibility:hidden}
+.cb-logo{position:absolute;top:24px;right:24px;width:120px;height:auto}
+.cb-ring{display:grid;place-items:center;align-content:center;gap:4px;width:62%;aspect-ratio:1;border-radius:50%;border:6px solid var(--coral);text-align:center;color:var(--paper)}
+.cb-ring b{font-size:18px;letter-spacing:.05em}
+.cb-ring small{font-size:14px;font-weight:700;color:var(--coral)}
+
+/* ---------- Foil by rarity (Holo Rare keeps the wide sweep) ---------- */
+/* Rare (leather): a thin clean sheen */
+.mcard:not(.ncard)::after{background:linear-gradient(105deg,transparent calc(var(--gx) - 7%),color-mix(in srgb,var(--paper) 38%,transparent) var(--gx),transparent calc(var(--gx) + 7%))}
+/* Mythic (night): etched coral and sulphur lines, revealed only where the light band passes */
+.ncard::after{background:repeating-linear-gradient(115deg,color-mix(in srgb,var(--coral) 55%,transparent) 0 2px,transparent 2px 7px,color-mix(in srgb,var(--sulphur) 45%,transparent) 7px 9px,transparent 9px 14px);
+  -webkit-mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 24%),var(--ink) var(--gx),transparent calc(var(--gx) + 24%));
+          mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 24%),var(--ink) var(--gx),transparent calc(var(--gx) + 24%))}
+
+/* ---------- Hard light: the coral shadow slides opposite the tilt ---------- */
+.tcard,.mcard{box-shadow:var(--sx,12px) var(--sy,12px) 0 var(--coral)}
+.binder-panel .mtg-stage .tcard{box-shadow:var(--sx,12px) var(--sy,12px) 0 var(--coral)}
+.tcard,.mcard{transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s cubic-bezier(.2,.8,.2,1)}
+.tcard.is-live,.mcard.is-live{transition:transform .08s linear,box-shadow .08s linear}
+.tcard.is-touch,.mcard.is-touch{transition:none}
+@media (max-width:680px){
+  .tcard,.mcard,.binder-panel .mtg-stage .tcard{box-shadow:calc(var(--sx,12px) / 2) calc(var(--sy,12px) / 2) 0 var(--coral)}
+  .card-back{box-shadow:inset 0 0 0 8px var(--ink),inset 0 0 0 12px var(--coral),6px 6px 0 var(--coral)}
+  .cb-logo{width:120px;top:18px;right:18px}
+}

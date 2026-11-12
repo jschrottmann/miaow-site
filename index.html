@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=7d72b7b7">
+<link rel="stylesheet" href="styles.css?v=cefeff15">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -86,6 +86,7 @@
       <div class="binder-panel" role="tabpanel" id="card-studio" aria-labelledby="tab-studio">
         <div class="mtg">
         <div class="mtg-stage">
+<div class="flip">
           <article class="tcard" aria-label="Miaow, Studio Form trading card" data-tilt>
             <header class="c-top">
               <span class="c-stage">Ibiza form</span>
@@ -101,6 +102,8 @@
             <p class="c-rule">Catch Miaow if you can</p>
             <footer class="c-foot"><span>Ibiza form · Manila Booths 001/2026 Holo Rare</span><span>Photo: credit to come</span></footer>
           </article>
+          <div class="card-back" aria-hidden="true"><img class="cb-logo" src="assets/logo-white.png" alt=""><span class="cb-ring"><b>MANILA BOOTHS</b><small>2026</small></span></div>
+          </div>
         </div>
           <dl class="mtg-fields">
             <dt>Card</dt><dd>Miaow, Studio Form</dd>
@@ -118,6 +121,7 @@
       <div class="binder-panel" role="tabpanel" id="card-leather" aria-labelledby="tab-leather">
         <div class="mtg">
         <div class="mtg-stage">
+<div class="flip">
           <article class="mcard" data-tilt aria-label="Miaow, Leather Form trading card">
             <div class="m-frame">
               <header class="m-name"><h4>Miaow, Leather Form</h4><span class="m-cost" aria-label="Cost: 2 and two coral"><b>2</b><i></i><i></i></span></header>
@@ -132,6 +136,8 @@
             </div>
             <footer class="m-foot"><span>Ibiza form · Manila Booths 002/2026 Rare</span><span>Photo: credit to come</span></footer>
           </article>
+          <div class="card-back" aria-hidden="true"><img class="cb-logo" src="assets/logo-white.png" alt=""><span class="cb-ring"><b>MANILA BOOTHS</b><small>2026</small></span></div>
+          </div>
         </div>
           <dl class="mtg-fields">
             <dt>Card</dt><dd>Miaow, Leather Form</dd>
@@ -149,6 +155,7 @@
       <div class="binder-panel" role="tabpanel" id="card-night" aria-labelledby="tab-night">
         <div class="mtg">
         <div class="mtg-stage">
+<div class="flip">
           <article class="mcard ncard" data-tilt aria-label="Miaow, Night Form trading card">
             <img class="n-art" src="assets/live-decks.jpg" alt="Miaow behind the decks under blue and magenta stage light" loading="lazy" decoding="async">
             <header class="n-name"><h4>Miaow, Night Form</h4><span class="m-cost" aria-label="Cost: 1, coral, sulphur and paper"><b>1</b><i></i><i class="s"></i><i class="p"></i></span></header>
@@ -161,6 +168,8 @@
               <div class="n-bottom"><span>Ibiza form · Manila Booths 003/2026 Mythic Rare<br>Photo: credit to come</span><span class="n-pt" aria-label="Power 4, toughness 4">4/4</span></div>
             </div>
           </article>
+          <div class="card-back" aria-hidden="true"><img class="cb-logo" src="assets/logo-white.png" alt=""><span class="cb-ring"><b>MANILA BOOTHS</b><small>2026</small></span></div>
+          </div>
         </div>
           <dl class="mtg-fields">
             <dt>Card</dt><dd>Miaow, Night Form</dd>
@@ -474,12 +483,17 @@ document.getElementById('copy').addEventListener('click', function () {
 /* card binder: form tiles are tabs (click, tap, arrow keys, Home/End). Without this script every panel stays visible. */
 document.querySelectorAll('[data-binder]').forEach(function (binder) {
   var tabs = Array.prototype.slice.call(binder.querySelectorAll('[role="tab"]'));
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches, first = true;
   function show(tab, focus) {
     tabs.forEach(function (t) {
       var on = t === tab, panel = document.getElementById(t.getAttribute('aria-controls'));
       t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
-      if (panel) panel.hidden = !on;
+      if (!panel) return;
+      var was = panel.hidden; panel.hidden = !on;
+      var flip = panel.querySelector('.flip');
+      if (on && was && !first && !calm && flip) { flip.classList.remove('flip-in'); void flip.offsetWidth; flip.classList.add('flip-in'); }
     });
+    first = false;
     if (focus) tab.focus();
     window.dispatchEvent(new Event('scroll'));
   }
@@ -506,6 +520,8 @@ document.querySelectorAll('[data-tilt]').forEach(function (card) {
     card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
     card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
     card.style.setProperty('--gx', gx.toFixed(1) + '%');
+    card.style.setProperty('--sx', (12 - ry * 0.9).toFixed(1) + 'px');
+    card.style.setProperty('--sy', (12 + rx * 0.9).toFixed(1) + 'px');
   }
   function fromPoint(x, y) {
     var r = card.getBoundingClientRect(), px = (x - r.left) / r.width, py = (y - r.top) / r.height;
