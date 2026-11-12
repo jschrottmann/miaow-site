@@ -290,8 +290,6 @@ footer a:hover{color:var(--coral)}
 .tcard{touch-action:pan-y}
 .tcard.is-touch{transition:none}
 /* holo shine: a narrow light band that follows the mouse, no glow */
-.tcard::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(105deg,transparent calc(var(--gx) - 18%),color-mix(in srgb,var(--sulphur) 22%,transparent) calc(var(--gx) - 4%),color-mix(in srgb,var(--paper) 30%,transparent) var(--gx),color-mix(in srgb,var(--coral) 22%,transparent) calc(var(--gx) + 4%),transparent calc(var(--gx) + 18%));mix-blend-mode:screen;transition:opacity .3s}
-.tcard.is-live::after{opacity:1}
 .c-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:baseline;gap:8px;padding:4px 4px 0}
 .c-stage{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);background:var(--paper);padding:4px 8px}
 .c-name{font-size:28px;line-height:1;letter-spacing:-.01em}
@@ -365,8 +363,6 @@ footer a:hover{color:var(--coral)}
 .mcard{--rx:0deg;--ry:0deg;--gx:50%;position:relative;padding:12px 12px 8px;background:var(--ink);color:var(--on-ink);box-shadow:12px 12px 0 var(--coral);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .5s cubic-bezier(.2,.8,.2,1);touch-action:pan-y}
 .mcard.is-live{transition:transform .08s linear}
 .mcard.is-touch{transition:none}
-.mcard::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(105deg,transparent calc(var(--gx) - 18%),color-mix(in srgb,var(--sulphur) 22%,transparent) calc(var(--gx) - 4%),color-mix(in srgb,var(--paper) 30%,transparent) var(--gx),color-mix(in srgb,var(--coral) 22%,transparent) calc(var(--gx) + 4%),transparent calc(var(--gx) + 18%));mix-blend-mode:screen;transition:opacity .3s}
-.mcard.is-live::after{opacity:1}
 .m-frame{position:relative;display:grid;gap:8px;padding:8px;background:var(--wood)}
 .m-name,.m-type{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;background:var(--sand);color:var(--ink);border:2px solid var(--ink)}
 .m-name h4{margin:0;font-size:16px;font-weight:700;line-height:1.1}
@@ -470,14 +466,22 @@ footer a:hover{color:var(--coral)}
   .cb-logo{width:120px;top:18px;right:18px}
 }
 
-/* ---------- One shine for every card: the Ibiza card's full sweep, drawn normally so it shows on
-   light frames (leather) as well as dark ones. Mythic (night) adds etched coral and sulphur lines inside the band. ---------- */
-.tcard::after,.mcard::after{
-  background:linear-gradient(105deg,transparent calc(var(--gx) - 18%),color-mix(in srgb,var(--sulphur) 30%,transparent) calc(var(--gx) - 4%),color-mix(in srgb,var(--paper) 45%,transparent) var(--gx),color-mix(in srgb,var(--coral) 30%,transparent) calc(var(--gx) + 4%),transparent calc(var(--gx) + 18%));
-  mix-blend-mode:normal;z-index:2}
-.ncard::after{
+
+/* ---------- Holo shine: one identical layer on every card ----------
+   A crisp light band follows the pointer (or the scroll on phones). Its colour shifts with position like real foil:
+   sulphur on the left of the card, paper in the middle, coral on the right. Fine foil lines run inside the band.
+   Drawn with normal blending so it reads the same on dark frames (Ibiza, Night) and light ones (Leather). */
+[data-tilt]::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;mix-blend-mode:normal;
   background:
-    repeating-linear-gradient(115deg,color-mix(in srgb,var(--coral) 60%,transparent) 0 2px,transparent 2px 7px,color-mix(in srgb,var(--sulphur) 55%,transparent) 7px 9px,transparent 9px 14px),
-    linear-gradient(105deg,transparent calc(var(--gx) - 18%),color-mix(in srgb,var(--sulphur) 30%,transparent) calc(var(--gx) - 4%),color-mix(in srgb,var(--paper) 45%,transparent) var(--gx),color-mix(in srgb,var(--coral) 30%,transparent) calc(var(--gx) + 4%),transparent calc(var(--gx) + 18%));
-  -webkit-mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 20%),var(--ink) var(--gx),transparent calc(var(--gx) + 20%));
-          mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 20%),var(--ink) var(--gx),transparent calc(var(--gx) + 20%))}
+    repeating-linear-gradient(115deg,color-mix(in srgb,var(--paper) 18%,transparent) 0 1px,transparent 1px 6px),
+    linear-gradient(105deg,
+      color-mix(in srgb,var(--sulphur) 46%,transparent) 0%,
+      color-mix(in srgb,var(--paper) 34%,transparent) 44%,
+      color-mix(in srgb,var(--paper) 62%,transparent) 50%,
+      color-mix(in srgb,var(--paper) 34%,transparent) 56%,
+      color-mix(in srgb,var(--coral) 46%,transparent) 100%);
+  -webkit-mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 13%),var(--ink) calc(var(--gx) - 2%),var(--ink) calc(var(--gx) + 2%),transparent calc(var(--gx) + 13%));
+          mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 13%),var(--ink) calc(var(--gx) - 2%),var(--ink) calc(var(--gx) + 2%),transparent calc(var(--gx) + 13%));
+  transition:opacity .3s}
+[data-tilt].is-live::after{opacity:.85}
