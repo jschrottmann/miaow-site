@@ -275,26 +275,16 @@ footer a:hover{color:var(--coral)}
 .bar{height:14px;background:linear-gradient(90deg,var(--coral) calc(var(--v) / 15 * 100%),var(--wood) 0);
   -webkit-mask:repeating-linear-gradient(90deg,var(--ink) 0 calc(100% / 15 - 3px),transparent 0 calc(100% / 15));
           mask:repeating-linear-gradient(90deg,var(--ink) 0 calc(100% / 15 - 3px),transparent 0 calc(100% / 15))}
-.forms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.forms figure{margin:0;border:2px solid var(--ink);background:var(--paper)}
-.forms img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 15%}
-.forms figcaption{display:grid;gap:2px;padding:12px 16px;font-size:13px;color:var(--wood);border-top:2px solid var(--ink)}
-.forms figcaption b{color:var(--ink);font-size:15px}
 @media (max-width:960px){
 }
 @media (max-width:680px){
   .stat{grid-template-columns:96px minmax(0,1fr) 22px}
-  .forms{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .forms figure:last-child{grid-column:span 2}
-  .forms figure:last-child img{aspect-ratio:16/9}
 }
 
 
 .story.solo{grid-template-columns:minmax(0,1fr)}
 
 /* ---------- Field notes as a trading card: card left, card data right ---------- */
-.tcg{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:var(--col-gap);align-items:start}
-.tcg-stage{perspective:1200px;position:sticky;top:96px}
 .tcard{--rx:0deg;--ry:0deg;--gx:50%;position:relative;display:grid;gap:8px;padding:12px;background:var(--ink);color:var(--on-ink);border:2px solid var(--coral);box-shadow:12px 12px 0 var(--coral);transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .5s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
 .tcard.is-live{transition:transform .08s linear}
 .tcard{touch-action:pan-y}
@@ -326,7 +316,7 @@ footer a:hover{color:var(--coral)}
 .c-wrr dt{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--on-ink-dim)}
 .c-wrr dd{margin:0;font-size:12px;font-weight:700}
 .c-rule{font-size:12px;font-style:italic;color:var(--sulphur);padding:0 4px}
-.c-foot{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--on-ink-dim);padding:0 4px 4px}
+.c-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 8px;font-size:11px;color:var(--on-ink-dim);padding:0 4px 4px}
 /* card data panel */
 .tcg-data{display:grid;gap:16px;min-width:0}
 .tcg-name{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;padding:16px 20px;background:var(--ink);color:var(--on-ink)}
@@ -359,11 +349,9 @@ footer a:hover{color:var(--coral)}
 .evo.cards .now{border-color:var(--coral)}
 .evo.cards .next{background:var(--coral);border-style:solid;border-color:var(--ink);color:var(--ink);position:relative;overflow:hidden}
 .evo.cards .next span,.evo.cards .next span:last-child,.evo.cards .next .evo-k{color:var(--ink)}
-.facedown{position:absolute;inset:16px;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:28px;letter-spacing:-.01em;color:var(--coral);background:var(--ink);transform:rotate(-8deg) scale(1.3);opacity:.9;z-index:0}
-.evo.cards .next > :not(.facedown){position:relative;z-index:1;background:var(--coral)}
+.facedown{position:absolute;left:16px;right:16px;top:16px;bottom:52%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:28px;letter-spacing:-.01em;color:var(--coral);background:var(--ink);transform:rotate(-6deg)}
+.evo.cards .next > :not(.facedown){position:relative}
 @media (max-width:960px){
-  .tcg{grid-template-columns:minmax(0,1fr)}
-  .tcg-stage{position:static;max-width:400px;width:100%;justify-self:center}
 }
 @media (max-width:680px){
   .tcard{box-shadow:6px 6px 0 var(--coral);margin-right:6px}
@@ -372,7 +360,7 @@ footer a:hover{color:var(--coral)}
 }
 
 /* ---------- Leather form: second card in a fantasy-TCG layout (own frame, brand palette) ---------- */
-.mtg{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:var(--col-gap);align-items:start}
+.mtg{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:var(--col-gap);align-items:start}
 .mtg-stage{perspective:1200px}
 .mcard{--rx:0deg;--ry:0deg;--gx:50%;position:relative;padding:12px 12px 8px;background:var(--ink);color:var(--on-ink);box-shadow:12px 12px 0 var(--coral);transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .5s cubic-bezier(.2,.8,.2,1);touch-action:pan-y}
 .mcard.is-live{transition:transform .08s linear}
@@ -400,10 +388,9 @@ footer a:hover{color:var(--coral)}
 .mtg-fields dt,.mtg-fields dd{margin:0;padding-block:12px;border-bottom:1px solid var(--grass)}
 .mtg-fields dt{font-size:13px;font-weight:700;color:var(--wood)}
 .mtg-fields dd{font-size:15px;line-height:1.5}
-.mtg + .tcg-set{margin-top:16px}
 @media (max-width:960px){
   .mtg{grid-template-columns:minmax(0,1fr)}
-  .mtg-stage{max-width:360px;width:100%;justify-self:center}
+  .mtg-stage{max-width:380px;width:100%;justify-self:center}
 }
 @media (max-width:680px){
   .mcard{box-shadow:6px 6px 0 var(--coral);margin-right:6px}
@@ -428,5 +415,31 @@ footer a:hover{color:var(--coral)}
 .n-pt{padding:4px 12px;background:var(--sand);color:var(--ink);border:2px solid var(--ink);font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
 
 /* forms row opens the field notes; space before the main card */
-.forms + .tcg{margin-top:clamp(48px,6vw,72px)}
 #field-notes .head + .evo-title{margin-top:0}
+
+/* ---------- Card binder: form tiles are tabs, one card and one details template at a time ---------- */
+.forms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:clamp(40px,5vw,56px)}
+.form-tab{display:grid;grid-template-rows:auto auto;padding:0;text-align:left;font:inherit;color:var(--ink);background:var(--paper);border:2px solid var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s}
+.form-tab img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 15%;border-bottom:2px solid var(--ink)}
+.form-tab span{display:grid;gap:2px;padding:12px 16px}
+.form-tab b{font-size:16px}
+.form-tab small{font-size:13px;color:var(--wood)}
+.form-tab:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--ink)}
+.form-tab[aria-selected="true"]{border-color:var(--coral);box-shadow:8px 8px 0 var(--coral);transform:translate(-4px,-4px)}
+.form-tab[aria-selected="true"] span{background:var(--ink);color:var(--on-ink)}
+.form-tab[aria-selected="true"] small{color:var(--coral)}
+.binder-panel + .binder-panel{margin-top:clamp(48px,6vw,72px)}
+.binder-panel[hidden]{display:none}
+.binder-panel .mtg-fields .tcg-moves li{font-size:15px}
+.binder-panel .mtg-fields .tcg-moves .mv{font-weight:400}
+.binder-panel .mtg-stage .tcard{box-shadow:12px 12px 0 var(--coral)}
+.species-block{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--col-gap);align-items:start;margin-top:clamp(56px,7vw,88px);padding-top:clamp(32px,4vw,48px);border-top:2px solid var(--ink)}
+.species-block .tcg-name{margin-bottom:16px}
+.species-block .tcg-row{margin-bottom:4px}
+.species-block .stats{padding-top:0}
+@media (max-width:960px){.species-block{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:680px){
+  .forms{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 12px 16px 4px;margin-inline:-4px}
+  .form-tab{scroll-snap-align:start}
+  .form-tab[aria-selected="true"]{box-shadow:6px 6px 0 var(--coral)}
+}
