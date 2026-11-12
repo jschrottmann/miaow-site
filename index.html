@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=6e4810e8">
+<link rel="stylesheet" href="styles.css?v=740a9b44">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -78,9 +78,9 @@
       <!-- CARD BINDER: the three form tiles are tabs; each opens its card and the same details template. Without scripts all three panels show. -->
       <div class="binder" data-binder>
       <div class="forms" role="tablist" aria-label="Forms">
-        <button class="form-tab" role="tab" id="tab-studio" aria-controls="card-studio" aria-selected="true" tabindex="0"><img src="assets/hero.jpg" alt="" class="multiply" style="object-position:35% 0" loading="lazy" decoding="async"><span><b>Studio form</b><small>No. 001, Holo Rare</small></span></button>
-        <button class="form-tab" role="tab" id="tab-leather" aria-controls="card-leather" aria-selected="false" tabindex="-1"><img src="assets/portrait-jacket.jpg" alt="" loading="lazy" decoding="async"><span><b>Leather form</b><small>No. 002, Rare</small></span></button>
-        <button class="form-tab" role="tab" id="tab-night" aria-controls="card-night" aria-selected="false" tabindex="-1"><img src="assets/live-decks.jpg" alt="" loading="lazy" decoding="async"><span><b>Night form</b><small>No. 003, Mythic Rare</small></span></button>
+        <button class="form-tab" role="tab" id="tab-studio" aria-controls="card-studio" aria-selected="true" tabindex="0"><img src="assets/form-studio.jpg" alt="" style="object-position:30% 20%" loading="lazy" decoding="async"><span><b>Studio form</b><small>No. 001, Holo Rare</small></span></button>
+        <button class="form-tab" role="tab" id="tab-night" aria-controls="card-night" aria-selected="false" tabindex="-1"><img src="assets/form-night.jpg" alt="" style="object-position:50% 20%" loading="lazy" decoding="async"><span><b>Night form</b><small>No. 002, Mythic Rare</small></span></button>
+        <button class="form-tab" role="tab" id="tab-day" aria-controls="card-day" aria-selected="false" tabindex="-1"><img src="assets/form-day.jpg" alt="" style="object-position:50% 25%" loading="lazy" decoding="async"><span><b>Day form</b><small>No. 003, Rare</small></span></button>
       </div>
 
       <div class="binder-panel" role="tabpanel" id="card-studio" aria-labelledby="tab-studio">
@@ -89,65 +89,31 @@
 <div class="flip">
           <article class="tcard" aria-label="Miaow, Studio Form trading card" data-tilt>
             <header class="c-top">
-              <span class="c-stage">Ibiza form</span>
+              <span class="c-stage">Creator Creature</span>
               <h3 class="c-name">MIAOW</h3>
-              <span class="c-hp"><small>BPM</small>128</span>
             </header>
-            <figure class="c-art"><img src="assets/hero-cutout.webp" alt="Miaow in a long camouflage coat, full length" loading="lazy" decoding="async"></figure>
+            <figure class="c-art"><img class="photo" src="assets/form-studio.jpg" alt="Miaow in clear glasses and a green camouflage puffer, crouched against a white wall" loading="lazy" decoding="async"></figure>
             <p class="c-sub">No. 001 Studio form <i>Panthera subsonica insularis</i></p>
-            <div class="c-ability"><span class="c-tag">Ability</span><b>Quick paws</b><p>Moves between bass, commercial open format, house and bigroom without missing a beat.</p></div>
-            <div class="c-attack"><span class="c-cost" aria-label="Cost 2"><i></i><i></i></span><b>Blindfolded beat juggling</b><span class="c-dmg">140</span></div>
-            <div class="c-attack"><span class="c-cost" aria-label="Cost 1"><i></i></span><b>Turns a kitchen clink into a sub</b><span class="c-dmg">110</span></div>
-            <dl class="c-wrr"><div><dt>Weakness</dt><dd>Silence</dd></div><div><dt>Resistance</dt><dd>Soft focus</dd></div><div><dt>Retreat</dt><dd>Never</dd></div></dl>
-            <p class="c-rule">Catch Miaow if you can</p>
-            <footer class="c-foot"><span>Ibiza form · Manila Booths 001/2026 Holo Rare</span><span>Photo: credit to come</span></footer>
+            <div class="c-ability"><span class="c-tag">Ability</span><p>If it makes a noise, it’s a sample.</p></div>
+            <div class="c-attack"><span class="c-cost" aria-label="Cost 1"><i></i></span><b>Kitchen Sound to Kick</b><span class="c-dmg">120</span></div>
+            <div class="c-attack"><span class="c-cost" aria-label="Cost 2"><i></i><i></i></span><b>Samples and Chops Kulintang</b><span class="c-dmg">140</span></div>
+            <dl class="c-wrr two"><div><dt>Resistance</dt><dd>Overused samples</dd></div><div><dt>Retreat</dt><dd>Only to the studio</dd></div></dl>
+            <p class="c-rule">“Why the heck not.”</p>
+            <footer class="c-foot"><span>Manila Booths 001/2026 Holo Rare</span><span>Photo: credit to come</span></footer>
           </article>
           <div class="card-back" aria-hidden="true"><img class="cb-logo" src="assets/logo-white.png" alt=""><span class="cb-ring"><b>MANILA BOOTHS</b><small>2026</small></span></div>
           </div>
         </div>
           <dl class="mtg-fields">
-            <dt>Card</dt><dd>Miaow, Studio Form</dd>
-            <dt>Stage</dt><dd>Ibiza form</dd>
-            <dt>Type</dt><dd>Creature card, Cat DJ</dd>
-            <dt>Cost or BPM</dt><dd>BPM 128</dd>
-            <dt>Abilities and moves</dt><dd><ul class="tcg-moves"><li><span class="mv"><b>Quick paws.</b> Moves between bass, commercial open format, house and bigroom without missing a beat.</span></li><li><b>Blindfolded beat juggling</b><span>140</span></li><li><b>Turns a kitchen clink into a sub</b><span>110</span></li></ul></dd>
-            <dt>Rule or flavour</dt><dd>Catch Miaow if you can</dd>
-            <dt>Battle stats</dt><dd>Weakness Silence, Resistance Soft focus, Retreat Never</dd>
-            <dt>Set</dt><dd>Manila Booths, 001/2026, Holo Rare</dd>
-            <dt>Photo</dt><dd>Credit to come</dd>
-          </dl>
-        </div>
-      </div>
-      <div class="binder-panel" role="tabpanel" id="card-leather" aria-labelledby="tab-leather">
-        <div class="mtg">
-        <div class="mtg-stage">
-<div class="flip">
-          <article class="mcard" data-tilt aria-label="Miaow, Leather Form trading card">
-            <div class="m-frame">
-              <header class="m-name"><h4>Miaow, Leather Form</h4><span class="m-cost" aria-label="Cost: 2 and two coral"><b>2</b><i></i><i></i></span></header>
-              <figure class="m-art"><img src="assets/portrait-jacket.jpg" alt="Miaow in a black leather jacket, hard light" loading="lazy" decoding="async"></figure>
-              <div class="m-type"><span>Legendary Creature, Cat DJ</span><span class="m-set" aria-label="Rare">R</span></div>
-              <div class="m-text">
-                <p><b>Quick paws.</b> Miaow moves between bass, commercial open format, house and bigroom without missing a beat.</p>
-                <p><b>Blindfolded.</b> While Miaow mixes without looking, nobody on the floor looks away.</p>
-                <p class="m-flavour">“I’ve done what I can at home. Now, with a new sound, this kitty’s ready to make footprints globally.” <span>Miaow</span></p>
-              </div>
-              <div class="m-pt" aria-label="Power 5, toughness 4">5/4</div>
-            </div>
-            <footer class="m-foot"><span>Ibiza form · Manila Booths 002/2026 Rare</span><span>Photo: credit to come</span></footer>
-          </article>
-          <div class="card-back" aria-hidden="true"><img class="cb-logo" src="assets/logo-white.png" alt=""><span class="cb-ring"><b>MANILA BOOTHS</b><small>2026</small></span></div>
-          </div>
-        </div>
-          <dl class="mtg-fields">
-            <dt>Card</dt><dd>Miaow, Leather Form</dd>
-            <dt>Stage</dt><dd>Ibiza form</dd>
-            <dt>Type</dt><dd>Legendary Creature, Cat DJ</dd>
-            <dt>Cost or BPM</dt><dd>2 and two coral</dd>
-            <dt>Abilities and moves</dt><dd><ul class="tcg-moves"><li><span class="mv"><b>Quick paws.</b> Moves between bass, commercial open format, house and bigroom without missing a beat.</span></li><li><span class="mv"><b>Blindfolded.</b> While Miaow mixes without looking, nobody on the floor looks away.</span></li></ul></dd>
-            <dt>Rule or flavour</dt><dd><i>“I’ve done what I can at home. Now, with a new sound, this kitty’s ready to make footprints globally.”</i></dd>
-            <dt>Battle stats</dt><dd>Power/toughness 5/4</dd>
-            <dt>Set</dt><dd>Manila Booths, 002/2026, Rare</dd>
+            <dt>Card</dt><dd>No. 001, Studio Form, Holo Rare</dd>
+            <dt>Type</dt><dd>Creator Creature</dd>
+            <dt>Favourite key</dt><dd>Emin, E Phrygian Dominant / Spanish Gypsy Scale</dd>
+            <dt>Ability</dt><dd>If it makes a noise, it’s a sample.</dd>
+            <dt>Moves</dt><dd><ul class="tcg-moves"><li><b>Kitchen Sound to Kick</b><span>120</span></li><li><b>Samples and Chops Kulintang</b><span>140</span></li></ul></dd>
+            <dt>Flavour</dt><dd><i>“Why the heck not.”</i></dd>
+            <dt>Resistance</dt><dd>Overused samples</dd>
+            <dt>Retreat</dt><dd>Only to the studio</dd>
+            <dt>Set</dt><dd>Manila Booths 001/2026</dd>
             <dt>Photo</dt><dd>Credit to come</dd>
           </dl>
         </div>
@@ -157,29 +123,67 @@
         <div class="mtg-stage">
 <div class="flip">
           <article class="mcard ncard" data-tilt aria-label="Miaow, Night Form trading card">
-            <img class="n-art" src="assets/live-decks.jpg" alt="Miaow behind the decks under blue and magenta stage light" loading="lazy" decoding="async">
-            <header class="n-name"><h4>Miaow, Night Form</h4><span class="m-cost" aria-label="Cost: 1, coral, sulphur and paper"><b>1</b><i></i><i class="s"></i><i class="p"></i></span></header>
+            <img class="n-art" src="assets/form-night.jpg" alt="Miaow in an oversized leather blazer and purple leather trousers, seated against a red wall" loading="lazy" decoding="async">
+            <header class="n-name"><h4>Miaow, Night Form</h4><span class="m-cost" aria-hidden="true"><i></i><i class="s"></i><i class="p"></i></span></header>
             <div class="n-lower">
-              <div class="n-type"><span>Legendary Creature, Cat DJ</span><span class="m-set" aria-label="Mythic rare">M</span></div>
+              <div class="n-type"><span>Shapeshifter Raver</span><span class="m-set" aria-label="Mythic rare">M</span></div>
               <div class="n-text">
-                <p>Whenever Miaow opens for a headliner, the floor is full before they arrive.</p>
-                <p><span class="n-pip" aria-label="2">2</span>, Tap a kitchen pan: turn its clink into a sub. Nobody can be blocked from the dancefloor this turn.</p>
+                <p><b>Shapeshift.</b> Bass, open format, commercial, house or bigroom. Whatever the room needs.</p>
+                <p class="m-move"><b>Blindfolded Beat Juggle</b><span>140</span></p>
+                <p class="m-move"><b>Talkbox Ambush</b> <small>the secret weapon</small><span>150</span></p>
+                <p class="m-flavour">“Commercial on the outside, raver to the core.”</p>
               </div>
-              <div class="n-bottom"><span>Ibiza form · Manila Booths 003/2026 Mythic Rare<br>Photo: credit to come</span><span class="n-pt" aria-label="Power 4, toughness 4">4/4</span></div>
+              <div class="n-bottom"><span>Manila Booths 002/2026 Mythic Rare<br>Resistance: Requests · Retreat: Never before last call</span></div>
             </div>
           </article>
           <div class="card-back" aria-hidden="true"><img class="cb-logo" src="assets/logo-white.png" alt=""><span class="cb-ring"><b>MANILA BOOTHS</b><small>2026</small></span></div>
           </div>
         </div>
           <dl class="mtg-fields">
-            <dt>Card</dt><dd>Miaow, Night Form</dd>
-            <dt>Stage</dt><dd>Ibiza form</dd>
-            <dt>Type</dt><dd>Legendary Creature, Cat DJ</dd>
-            <dt>Cost or BPM</dt><dd>1, coral, sulphur and paper</dd>
-            <dt>Abilities and moves</dt><dd><ul class="tcg-moves"><li><span class="mv">Whenever Miaow opens for a headliner, the floor is full before they arrive.</span></li><li><span class="mv">2, Tap a kitchen pan: turn its clink into a sub. Nobody can be blocked from the dancefloor this turn.</span></li></ul></dd>
-            <dt>Rule or flavour</dt><dd>None</dd>
-            <dt>Battle stats</dt><dd>Power/toughness 4/4</dd>
-            <dt>Set</dt><dd>Manila Booths, 003/2026, Mythic Rare, borderless</dd>
+            <dt>Card</dt><dd>No. 002, Night Form, Mythic Rare</dd>
+            <dt>Type</dt><dd>Shapeshifter Raver</dd>
+            <dt>Favourite drop</dt><dd>The one nobody saw coming</dd>
+            <dt>Ability</dt><dd>Shapeshift. Bass, open format, commercial, house or bigroom. Whatever the room needs.</dd>
+            <dt>Moves</dt><dd><ul class="tcg-moves"><li><b>Blindfolded Beat Juggle</b><span>140</span></li><li><b>Talkbox Ambush, the secret weapon</b><span>150</span></li></ul></dd>
+            <dt>Flavour</dt><dd><i>“Commercial on the outside, raver to the core.”</i></dd>
+            <dt>Resistance</dt><dd>Requests</dd>
+            <dt>Retreat</dt><dd>Never before last call</dd>
+            <dt>Set</dt><dd>Manila Booths 002/2026</dd>
+            <dt>Photo</dt><dd>Credit to come</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="binder-panel" role="tabpanel" id="card-day" aria-labelledby="tab-day">
+        <div class="mtg">
+        <div class="mtg-stage">
+<div class="flip">
+          <article class="mcard" data-tilt aria-label="Miaow, Day Form trading card">
+            <div class="m-frame">
+              <header class="m-name"><h4>Miaow, Day Form</h4><span class="m-cost" aria-hidden="true"><i></i><i></i></span></header>
+              <figure class="m-art"><img src="assets/form-day.jpg" alt="Miaow in running gear, arms raised over her head in morning sun" loading="lazy" decoding="async"></figure>
+              <div class="m-type"><span>Balanced Creature</span><span class="m-set" aria-label="Rare">R</span></div>
+              <div class="m-text">
+                <p><b>Fun run.</b> Runs the fun run, then runs the set.</p>
+                <p class="m-move"><b>Body Is the Instrument</b><span>100</span></p>
+                <p class="m-move"><b>Balance Beam</b><span>90</span></p>
+                <p class="m-flavour">“My sanity is day, but my taste is night.” <span>Miaow</span></p>
+              </div>
+            </div>
+            <footer class="m-foot"><span>Manila Booths 003/2026 Rare</span><span>Resistance: Burnout · Retreat: To the island</span></footer>
+          </article>
+          <div class="card-back" aria-hidden="true"><img class="cb-logo" src="assets/logo-white.png" alt=""><span class="cb-ring"><b>MANILA BOOTHS</b><small>2026</small></span></div>
+          </div>
+        </div>
+          <dl class="mtg-fields">
+            <dt>Card</dt><dd>No. 003, Day Form, Rare</dd>
+            <dt>Type</dt><dd>Balanced Creature</dd>
+            <dt>Favourite pace</dt><dd>Easy run, hard drop</dd>
+            <dt>Ability</dt><dd>Runs the fun run, then runs the set.</dd>
+            <dt>Moves</dt><dd><ul class="tcg-moves"><li><b>Body Is the Instrument</b><span>100</span></li><li><b>Balance Beam</b><span>90</span></li></ul></dd>
+            <dt>Flavour</dt><dd><i>“My sanity is day, but my taste is night.”</i></dd>
+            <dt>Resistance</dt><dd>Burnout</dd>
+            <dt>Retreat</dt><dd>To the island</dd>
+            <dt>Set</dt><dd>Manila Booths 003/2026</dd>
             <dt>Photo</dt><dd>Credit to come</dd>
           </dl>
         </div>
@@ -209,15 +213,8 @@
             <div class="stat"><span class="stat-n">Range</span><span class="bar" style="--v:13" role="img" aria-label="Range: 13 of 15"></span><span class="stat-v">13</span></div>
         </div>
       </div>
-      <p class="tcg-set">Drafts for Miaow’s sign-off: BPM, costs, damage, weakness, resistance and retreat, power/toughness, the Blindfolded, headliner and kitchen-pan lines, set numbers and the base stats. Photo credit to come.</p>
+      <p class="tcg-set">Base stats are drafts for Miaow’s sign-off. Photo credits to come.</p>
 
-      <h3 class="evo-title">Evolution</h3>
-      <ol class="evo cards">
-        <li><span class="evo-k">2014</span><b>Battle circuit</b><span>Pioneer Digital DJ Battle, 1st Runner Up</span></li>
-        <li><span class="evo-k">2017 to 2023</span><b>Main stages</b><span>Chicane at Boracay, FIBA Basketball World Cup</span></li>
-        <li class="now"><span class="evo-k">2026 · NOW</span><b>Ibiza form</b><span>IMS Future Talent Grand Prix, Pete Tong at Tantra, Cr2 remix win</span></li>
-        <li class="next"><span class="evo-k">NEXT</span><b>???</b><em class="facedown" aria-hidden="true">MIAOW</em><span>Still evolving. A new sound with Filipino instrumentation, headed for international dancefloors</span></li>
-      </ol>
   </div>
   </section>
 
@@ -251,6 +248,7 @@
   <div class="wrap">
       <h2>Music</h2>
       <p>Genre-bending records: bass music fused with alternative, pop and R&amp;B.</p>
+      <div class="btns"><a class="btn" href="https://open.spotify.com/artist/1MfmpIif2e8aqhGX1sEDlo" target="_blank" rel="noopener">Spotify</a><a class="btn ghost" href="https://soundcloud.com/yesmiaow" target="_blank" rel="noopener">SoundCloud</a></div>
   </div>
   </section>
 
@@ -280,22 +278,6 @@
   </div>
   </section>
 
-  <section class="band sand">
-  <div class="wrap">
-      <div class="head">
-        <h2>Every release</h2>
-      </div>
-      <div class="ph">
-        <span class="label">TRACK LIST COMING</span>
-        <p>Full discography with years, collaborators and streaming links goes here. Until then, every release is on Spotify and SoundCloud.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:12px">
-          <a class="btn" href="https://open.spotify.com/artist/1MfmpIif2e8aqhGX1sEDlo" target="_blank" rel="noopener">Spotify</a>
-          <a class="btn ghost" href="https://soundcloud.com/yesmiaow" target="_blank" rel="noopener">SoundCloud</a>
-        </div>
-      </div>
-  </div>
-  </section>
-
   <!-- 4. SHOWS BAND -->
   <section class="showsband" id="shows">
     <img src="assets/live-crowd.jpg" alt="">
@@ -303,19 +285,6 @@
       <h2>See Miaow live</h2>
       <p>Battle-circuit reflexes, main-stage energy. Bass, commercial open format, house and bigroom.</p>
     </div>
-  </section>
-
-  <section class="band">
-  <div class="wrap">
-      <div class="head">
-        <h2>Next dates</h2>
-      </div>
-      <div class="ph">
-        <span class="label">DATES TO BE ANNOUNCED</span>
-        <p>New dates land here first. Promoters and venues can book Miaow for clubs, festivals and brand events.</p>
-        <a class="btn" href="#contact">Book Miaow</a>
-      </div>
-  </div>
   </section>
 
   <section class="band ink">
@@ -329,44 +298,24 @@
         <li><span class="y">2017</span><span><b>Chicane</b> live, Boracay Music Festival (closing act)</span></li>
         <li><span class="y">2014</span><span><b>Macklemore</b> live in Manila (opening act)</span></li>
       </ul>
+      <a class="btn after-list" href="#contact">Book Miaow</a>
   </div>
-  </section>
-
-  <section class="band ink tight-top">
-  <div class="wrap">
-      <div class="head">
-        <h2>Gallery</h2>
-      </div>
-      <div class="live">
-        <div class="a"><img src="assets/live-decks.jpg" alt="Miaow behind Pioneer decks under blue and magenta stage light" loading="lazy" decoding="async"></div>
-        <div class="b"><img src="assets/portrait-chair.jpg" alt="Miaow lounging in a leather armchair" loading="lazy" decoding="async"></div>
-        <div class="c"><img src="assets/portrait-jacket.jpg" alt="Miaow in a leather jacket" loading="lazy" decoding="async"></div>
-        <div class="d"><img src="assets/live-crowd-top.jpg" alt="Miaow on stage facing a packed festival crowd, arm raised" loading="lazy" decoding="async"></div>
-        <div class="e"><img src="assets/live-crowd.jpg" alt="Front row of the crowd with hands up at a Miaow set" loading="lazy" decoding="async"></div>
-      </div>
-  </div>
-  </section>
-
-  <!-- 3. CONNECT -->
-  <section class="band sand" id="listen">
-    <div class="wrap">
-      <div class="head">
-        <h2>Listen &amp; follow</h2>
-      </div>
-      <div class="connect">
-        <a href="https://open.spotify.com/artist/1MfmpIif2e8aqhGX1sEDlo" target="_blank" rel="noopener"><span class="n">SPOTIFY</span><span class="s">Listen</span></a>
-        <a href="https://soundcloud.com/yesmiaow" target="_blank" rel="noopener"><span class="n">SOUNDCLOUD</span><span class="s">Mixes &amp; edits</span></a>
-        <a href="https://www.instagram.com/yesmiaow/" target="_blank" rel="noopener"><span class="n">INSTAGRAM</span><span class="s">@yesmiaow</span></a>
-        <a href="https://www.tiktok.com/@yesmiaow" target="_blank" rel="noopener"><span class="n">TIKTOK</span><span class="s">@yesmiaow</span></a>
-        <a href="#press"><span class="n">PRESS KIT</span><span class="s">Photos &amp; articles</span></a>
-      </div>
-    </div>
   </section>
 
   <section class="pagehead" id="press">
   <div class="wrap">
       <h2>Press kit</h2>
-      <p>Articles, photos and the 2026 EPK. Always credit as Miaow.</p>
+      <p>Articles and the 2026 EPK. Always credit as Miaow.</p>
+  </div>
+  </section>
+
+  <section class="band ink">
+  <div class="wrap">
+      <div class="ph">
+        <span class="label">EPK 2026</span>
+        <p>Bio, highlights, brand list and tech rider in one PDF, plus hi-res photos.</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1BLjncpgPDrZVUqK-PyjPawn6CcSE0zsk?usp=drive_link" target="_blank" rel="noopener">Download</a>
+      </div>
   </div>
   </section>
 
@@ -383,29 +332,6 @@
   </div>
   </section>
 
-  <section class="band sand">
-  <div class="wrap">
-      <div class="head sm">
-        <h2>Photos</h2>
-      </div>
-      <div class="photos">
-        <figure><img class="multiply" src="assets/hero.jpg" alt="Miaow in a long camouflage coat" style="object-position:30% 0%" loading="lazy" decoding="async"><figcaption>Studio, camo coat</figcaption></figure>
-        <figure><img src="assets/portrait-jacket.jpg" alt="Miaow in a black leather jacket" loading="lazy" decoding="async"><figcaption>Studio, leather jacket</figcaption></figure>
-        <figure><img src="assets/live-decks.jpg" alt="Miaow behind the decks under stage light" loading="lazy" decoding="async"><figcaption>Live, behind the decks</figcaption></figure>
-      </div>
-  </div>
-  </section>
-
-  <section class="band ink">
-  <div class="wrap">
-      <div class="ph">
-        <span class="label">EPK 2026</span>
-        <p>Bio, highlights, brand list and tech rider in one PDF, plus hi-res photos. Sent on request.</p>
-        <a class="btn" href="#contact">Request the EPK</a>
-      </div>
-  </div>
-  </section>
-
   <section class="band sand" id="brands">
   <div class="wrap">
       <div class="head sm">
@@ -418,34 +344,23 @@
   <section class="pagehead" id="contact">
   <div class="wrap">
       <h2>Contact &amp; bookings</h2>
-      <p>Use the right inbox below. It’s the fastest way to a reply.</p>
+      <p>One inbox for everything. It’s the fastest way to a reply.</p>
   </div>
   </section>
 
   <section class="band">
-  <div class="wrap inboxes">
-      <div class="inbox"><span class="label">BOOKINGS</span><a href="mailto:contact@miaow.world">contact@miaow.world</a><p>Clubs, festivals, brand activations</p></div>
-      <div class="inbox"><span class="label">PRESS</span><a href="mailto:contact@miaow.world">contact@miaow.world</a><p>Interviews, features, EPK and hi-res photos</p></div>
-      <div class="inbox"><span class="label">MANAGEMENT</span><a href="mailto:contact@miaow.world">contact@miaow.world</a><p>Partnerships and collaborations</p></div>
-      <div class="inbox"><span class="label">REMIXES &amp; MUSIC</span><a href="mailto:contact@miaow.world">contact@miaow.world</a><p>Remix requests and label enquiries</p></div>
-  </div>
-  </section>
-
-  <section class="band sand" id="rider">
-  <div class="wrap split rider">
-      <div>
-        <div class="head sm">
-          <h2>Tech rider</h2>
-        </div>
-        <table class="spec">
-          <tr><th>MIXER</th><td>One (1) Pioneer DJM 900 Nexus or higher model</td></tr>
-          <tr><th>PLAYERS</th><td>Two (2) Pioneer CDJ 2000 Nexus or higher model</td></tr>
-          <tr><th>MONITOR</th><td>Mackie 12" booth monitor or equivalent model</td></tr>
-          <tr><th>CABLING</th><td>LAN link cable between players · RCA cables into channels 2 and 3</td></tr>
-          <tr><th>MIN. TABLE</th><td>3 ft high, 4 ft long, 1.5 ft wide</td></tr>
-        </table>
+  <div class="wrap">
+      <div class="inbox solo"><span class="label">BOOKINGS, PRESS, MANAGEMENT, COLLABS</span><a href="mailto:contact@miaow.world">contact@miaow.world</a></div>
+      <div class="head sm follow-head">
+        <h2>Listen &amp; follow</h2>
       </div>
-      <figure><img class="multiply" src="assets/rider.jpg" alt="Setup diagram: two Pioneer CDJ 2000 Nexus players linked by LAN cable, RCA cables into channels 2 and 3 of a Pioneer DJM 900 Nexus mixer, plus a Mackie booth monitor" loading="lazy" decoding="async"></figure>
+      <div class="connect">
+        <a href="https://open.spotify.com/artist/1MfmpIif2e8aqhGX1sEDlo" target="_blank" rel="noopener"><span class="n">SPOTIFY</span><span class="s">Listen</span></a>
+        <a href="https://soundcloud.com/yesmiaow" target="_blank" rel="noopener"><span class="n">SOUNDCLOUD</span><span class="s">Mixes &amp; edits</span></a>
+        <a href="https://www.instagram.com/yesmiaow/" target="_blank" rel="noopener"><span class="n">INSTAGRAM</span><span class="s">@yesmiaow</span></a>
+        <a href="https://www.tiktok.com/@yesmiaow" target="_blank" rel="noopener"><span class="n">TIKTOK</span><span class="s">@yesmiaow</span></a>
+        <a href="#press"><span class="n">PRESS KIT</span><span class="s">EPK &amp; articles</span></a>
+      </div>
   </div>
   </section>
 
