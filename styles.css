@@ -443,7 +443,7 @@ footer a:hover{color:var(--coral)}
 .fc-move small{font-size:11px;font-style:italic;color:var(--wood)}
 .fc-move span{margin-left:auto;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}
 .fc-flavour{font-size:12px;font-style:italic;color:var(--wood);padding-top:6px;border-top:1px solid var(--grass)}
-.fc-foot{display:grid;gap:2px;font-size:11px;line-height:1.35;color:var(--on-ink-dim)}
+.fc-foot{display:grid;gap:2px;margin:0;padding:0;border:0;background:none;font-size:11px;line-height:1.35;color:var(--on-ink-dim)}
 .fc-day .fc-foot{color:var(--on-ink)}
 /* Night: borderless legendary, photo fills the card, crown on the name bar */
 .fc-night{border-color:var(--sulphur)}
