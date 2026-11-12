@@ -399,19 +399,56 @@ document.getElementById('copy').addEventListener('click', function () {
 });
 </script>
 <script>
-/* trading card: tilt and holo shine follow the mouse; touch and reduced motion get the still card */
+/* trading card: tilt and holo shine.
+   Mouse: follows the pointer. Phone: the card tilts and the shine sweeps as it scrolls through the screen,
+   and a sideways finger drag on the card tilts it directly (vertical swipes still scroll the page).
+   Reduced motion: the card stays still. */
 (function () {
   var card = document.querySelector('[data-tilt]');
-  if (!card || !window.matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) return;
+  if (!card || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var dragging = false, ticking = false;
+  function set(rx, ry, gx) {
+    card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+    card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+    card.style.setProperty('--gx', gx.toFixed(1) + '%');
+  }
+  function fromPoint(x, y) {
+    var r = card.getBoundingClientRect(), px = (x - r.left) / r.width, py = (y - r.top) / r.height;
+    px = Math.min(1, Math.max(0, px)); py = Math.min(1, Math.max(0, py));
+    set((0.5 - py) * 14, (px - 0.5) * 14, px * 100);
+  }
+  /* mouse */
   card.addEventListener('pointermove', function (e) {
-    if (e.pointerType !== 'mouse') return;
-    var r = card.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-    card.style.setProperty('--ry', ((x - 0.5) * 14).toFixed(2) + 'deg');
-    card.style.setProperty('--rx', ((0.5 - y) * 14).toFixed(2) + 'deg');
-    card.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
-    card.classList.add('is-live');
+    if (e.pointerType === 'mouse') { card.classList.add('is-live'); fromPoint(e.clientX, e.clientY); }
+    else if (dragging) { fromPoint(e.clientX, e.clientY); }
   });
-  card.addEventListener('pointerleave', function () { card.classList.remove('is-live'); card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
+  card.addEventListener('pointerleave', function (e) {
+    if (e.pointerType === 'mouse') { card.classList.remove('is-live'); set(0, 0, 50); }
+  });
+  /* touch: a sideways drag tilts; the browser keeps vertical swipes for scrolling (touch-action: pan-y) */
+  card.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse') return;
+    dragging = true; card.classList.add('is-live', 'is-touch'); fromPoint(e.clientX, e.clientY);
+  });
+  function release() { if (!dragging) return; dragging = false; card.classList.remove('is-touch'); onScroll(); }
+  card.addEventListener('pointerup', release);
+  card.addEventListener('pointercancel', release);
+  /* touch screens: scroll position drives the tilt and the shine */
+  if (!window.matchMedia('(hover: none)').matches) return;
+  function update() {
+    ticking = false;
+    if (dragging) return;
+    var r = card.getBoundingClientRect(), vh = window.innerHeight;
+    if (r.bottom < 0 || r.top > vh) { card.classList.remove('is-live'); return; }
+    var p = (r.top + r.height / 2) / vh;          /* 1 = entering from below, 0 = leaving at the top */
+    p = Math.min(1.2, Math.max(-0.2, p));
+    card.classList.add('is-live');
+    set((p - 0.5) * 16, (0.5 - p) * 6, (1 - p) * 100);
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
 })();
 </script>
 <script>

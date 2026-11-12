@@ -297,6 +297,8 @@ footer a:hover{color:var(--coral)}
 .tcg-stage{perspective:1200px;position:sticky;top:96px}
 .tcard{--rx:0deg;--ry:0deg;--gx:50%;position:relative;display:grid;gap:8px;padding:12px;background:var(--ink);color:var(--on-ink);border:2px solid var(--coral);box-shadow:12px 12px 0 var(--coral);transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .5s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
 .tcard.is-live{transition:transform .08s linear}
+.tcard{touch-action:pan-y}
+.tcard.is-touch{transition:none}
 /* holo shine: a narrow light band that follows the mouse, no glow */
 .tcard::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(105deg,transparent calc(var(--gx) - 18%),color-mix(in srgb,var(--sulphur) 22%,transparent) calc(var(--gx) - 4%),color-mix(in srgb,var(--paper) 30%,transparent) var(--gx),color-mix(in srgb,var(--coral) 22%,transparent) calc(var(--gx) + 4%),transparent calc(var(--gx) + 18%));mix-blend-mode:screen;transition:opacity .3s}
 .tcard.is-live::after{opacity:1}
