@@ -484,3 +484,10 @@ footer a:hover{color:var(--coral)}
 .fc-night .fc-pop{position:absolute;left:5%;bottom:0;width:115%;max-width:none;height:auto;z-index:3;pointer-events:none;transform:translate(calc(var(--px) * .5px),calc(var(--py) * -.5px))}
 .fc-night .fc-type,.fc-night .fc-text,.fc-night .fc-foot{z-index:4}
 .fc-night::after{z-index:5}
+
+/* Rare art: the photo stays whole, printed like card stock. Warm brand grade + fine halftone dots, no cutout, no foil. */
+.fc-day .fc-art{position:relative}
+.fc-day .fc-art img{filter:sepia(.2) saturate(.92) contrast(1.06)}
+.fc-day .fc-art::after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background:
+  radial-gradient(circle at 2px 2px,color-mix(in srgb,var(--ink) 12%,transparent) 0 .7px,transparent 1.2px) 0 0/4px 4px,
+  linear-gradient(160deg,color-mix(in srgb,var(--coral) 14%,transparent),color-mix(in srgb,var(--sand) 18%,transparent))}
