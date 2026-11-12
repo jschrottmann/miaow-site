@@ -445,13 +445,11 @@ footer a:hover{color:var(--coral)}
 .fc-flavour{font-size:12px;font-style:italic;color:var(--wood);padding-top:6px;border-top:1px solid var(--grass)}
 .fc-foot{display:grid;gap:2px;margin:0;padding:0;border:0;background:none;font-size:11px;line-height:1.35;color:var(--on-ink-dim)}
 .fc-day .fc-foot{color:var(--on-ink)}
-/* Night: borderless legendary, photo fills the card, crown on the name bar */
+/* Night: borderless legendary, photo fills the card */
 .fc-night{border-color:var(--sulphur)}
 .fc-night .fc-art{position:absolute;inset:0;border:0}
-.fc-night .fc-name{margin-top:8px}
 .fc-night .fc-type{margin-top:auto}
 .fc-night .fc-foot{padding:6px 8px;background:var(--ink);color:var(--on-ink)}
-.fc-night .fc-name::before{content:"";position:absolute;left:20%;right:20%;top:-10px;height:10px;background:var(--sand);border:2px solid var(--ink);border-bottom:0;clip-path:polygon(0 100%,6% 0,14% 60%,24% 0,34% 60%,50% 0,66% 60%,76% 0,86% 60%,94% 0,100% 100%)}
 @media (max-width:680px){
   .fc{margin-right:6px}
 }
