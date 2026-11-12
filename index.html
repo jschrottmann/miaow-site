@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=ce7befc6">
+<link rel="stylesheet" href="styles.css?v=3e7f4fee">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -129,6 +129,40 @@
         <figure><img src="assets/live-decks.jpg" alt="Miaow in night form, behind the decks" loading="lazy" decoding="async"><figcaption><b>Miaow</b>Night form</figcaption></figure>
         <figure><img src="assets/portrait-jacket.jpg" alt="Miaow in leather form, black leather jacket" loading="lazy" decoding="async"><figcaption><b>Miaow</b>Leather form</figcaption></figure>
       </div>
+
+      <h3 class="evo-title">Leather form, alternate printing</h3>
+      <!-- second card in a fantasy-TCG layout (name and cost bar, art, type line, rules box, power/toughness). Rules lines, cost, P/T and set number are drafts for Miaow. -->
+      <div class="mtg">
+        <div class="mtg-stage">
+          <article class="mcard" data-tilt aria-label="Miaow, Leather Form trading card">
+            <div class="m-frame">
+              <header class="m-name"><h4>Miaow, Leather Form</h4><span class="m-cost" aria-label="Cost: 2 and two coral"><b>2</b><i></i><i></i></span></header>
+              <figure class="m-art"><img src="assets/portrait-jacket.jpg" alt="Miaow in a black leather jacket, hard light" loading="lazy" decoding="async"></figure>
+              <div class="m-type"><span>Legendary Creature, Cat DJ</span><span class="m-set" aria-label="Rare">R</span></div>
+              <div class="m-text">
+                <p><b>Quick paws.</b> Miaow moves between bass, commercial open format, house and bigroom without missing a beat.</p>
+                <p><b>Blindfolded.</b> While Miaow mixes without looking, nobody on the floor looks away.</p>
+                <p class="m-flavour">“I’ve done what I can at home. Now, with a new sound, this kitty’s ready to make footprints globally.” <span>Miaow</span></p>
+              </div>
+              <div class="m-pt" aria-label="Power 5, toughness 4">5/4</div>
+            </div>
+            <footer class="m-foot"><span>002/2026 R MIA EN</span><span>Photo: credit to come</span></footer>
+          </article>
+        </div>
+        <dl class="mtg-fields">
+          <dt>Card name</dt><dd>Miaow, Leather Form</dd>
+          <dt>Cost</dt><dd>2 and two coral</dd>
+          <dt>Type</dt><dd>Legendary Creature, Cat DJ</dd>
+          <dt>Rarity</dt><dd>Rare</dd>
+          <dt>Rules text</dt><dd><b>Quick paws.</b> Moves between bass, commercial open format, house and bigroom without missing a beat.<br><b>Blindfolded.</b> While Miaow mixes without looking, nobody on the floor looks away.</dd>
+          <dt>Flavour text</dt><dd><i>“I’ve done what I can at home. Now, with a new sound, this kitty’s ready to make footprints globally.”</i></dd>
+          <dt>Power/<wbr>Toughness</dt><dd>5/4</dd>
+          <dt>Set</dt><dd>Manila Booths, 002/2026</dd>
+          <dt>Photo</dt><dd>Credit to come</dd>
+          <dt>Printings</dt><dd>Ibiza form (No. 001) · Leather form (No. 002)</dd>
+        </dl>
+      </div>
+      <p class="tcg-set">Cost, power/toughness, the Blindfolded line and the set number are drafts for Miaow’s sign-off.</p>
 
       <h3 class="evo-title">Evolution</h3>
       <ol class="evo cards">
@@ -403,9 +437,8 @@ document.getElementById('copy').addEventListener('click', function () {
    Mouse: follows the pointer. Phone: the card tilts and the shine sweeps as it scrolls through the screen,
    and a sideways finger drag on the card tilts it directly (vertical swipes still scroll the page).
    Reduced motion: the card stays still. */
-(function () {
-  var card = document.querySelector('[data-tilt]');
-  if (!card || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+document.querySelectorAll('[data-tilt]').forEach(function (card) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var dragging = false, ticking = false;
   function set(rx, ry, gx) {
     card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
@@ -449,7 +482,7 @@ document.getElementById('copy').addEventListener('click', function () {
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
-})();
+});
 </script>
 <script>
 /* one-page nav: mark the link for the section in view */
