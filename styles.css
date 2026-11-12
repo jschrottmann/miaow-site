@@ -456,12 +456,6 @@ footer a:hover{color:var(--coral)}
 .cb-ring small{font-size:14px;font-weight:700;color:var(--coral)}
 
 /* ---------- Foil by rarity (Holo Rare keeps the wide sweep) ---------- */
-/* Rare (leather): a thin clean sheen */
-.mcard:not(.ncard)::after{background:linear-gradient(105deg,transparent calc(var(--gx) - 7%),color-mix(in srgb,var(--paper) 38%,transparent) var(--gx),transparent calc(var(--gx) + 7%))}
-/* Mythic (night): etched coral and sulphur lines, revealed only where the light band passes */
-.ncard::after{background:repeating-linear-gradient(115deg,color-mix(in srgb,var(--coral) 55%,transparent) 0 2px,transparent 2px 7px,color-mix(in srgb,var(--sulphur) 45%,transparent) 7px 9px,transparent 9px 14px);
-  -webkit-mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 24%),var(--ink) var(--gx),transparent calc(var(--gx) + 24%));
-          mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 24%),var(--ink) var(--gx),transparent calc(var(--gx) + 24%))}
 
 /* ---------- Hard light: the coral shadow slides opposite the tilt ---------- */
 .tcard,.mcard{box-shadow:var(--sx,12px) var(--sy,12px) 0 var(--coral)}
@@ -474,3 +468,15 @@ footer a:hover{color:var(--coral)}
   .card-back{box-shadow:inset 0 0 0 8px var(--ink),inset 0 0 0 12px var(--coral),6px 6px 0 var(--coral)}
   .cb-logo{width:120px;top:18px;right:18px}
 }
+
+/* ---------- One shine for every card: the Ibiza card's full sweep, drawn normally so it shows on
+   light frames (leather) as well as dark ones. Mythic (night) adds etched coral and sulphur lines inside the band. ---------- */
+.tcard::after,.mcard::after{
+  background:linear-gradient(105deg,transparent calc(var(--gx) - 18%),color-mix(in srgb,var(--sulphur) 30%,transparent) calc(var(--gx) - 4%),color-mix(in srgb,var(--paper) 45%,transparent) var(--gx),color-mix(in srgb,var(--coral) 30%,transparent) calc(var(--gx) + 4%),transparent calc(var(--gx) + 18%));
+  mix-blend-mode:normal;z-index:2}
+.ncard::after{
+  background:
+    repeating-linear-gradient(115deg,color-mix(in srgb,var(--coral) 60%,transparent) 0 2px,transparent 2px 7px,color-mix(in srgb,var(--sulphur) 55%,transparent) 7px 9px,transparent 9px 14px),
+    linear-gradient(105deg,transparent calc(var(--gx) - 18%),color-mix(in srgb,var(--sulphur) 30%,transparent) calc(var(--gx) - 4%),color-mix(in srgb,var(--paper) 45%,transparent) var(--gx),color-mix(in srgb,var(--coral) 30%,transparent) calc(var(--gx) + 4%),transparent calc(var(--gx) + 18%));
+  -webkit-mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 20%),var(--ink) var(--gx),transparent calc(var(--gx) + 20%));
+          mask-image:linear-gradient(105deg,transparent calc(var(--gx) - 20%),var(--ink) var(--gx),transparent calc(var(--gx) + 20%))}
