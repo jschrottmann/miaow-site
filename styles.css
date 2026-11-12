@@ -285,36 +285,7 @@ footer a:hover{color:var(--coral)}
 .story.solo{grid-template-columns:minmax(0,1fr)}
 
 /* ---------- Field notes as a trading card: card left, card data right ---------- */
-.tcard{--rx:0deg;--ry:0deg;--gx:50%;position:relative;display:grid;gap:8px;padding:12px;background:var(--ink);color:var(--on-ink);border:2px solid var(--coral);box-shadow:12px 12px 0 var(--coral);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.tcard.is-live{transition:transform .08s linear}
-.tcard{touch-action:pan-y}
-.tcard.is-touch{transition:none}
 /* holo shine: a narrow light band that follows the mouse, no glow */
-.c-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:baseline;gap:8px;padding:4px 4px 0}
-.c-stage{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);background:var(--paper);padding:4px 8px}
-.c-name{font-size:28px;line-height:1;letter-spacing:-.01em}
-.c-hp{font-size:28px;font-weight:700;line-height:1;color:var(--coral)}
-.c-hp small{font-size:11px;letter-spacing:.05em;margin-right:4px;color:var(--on-ink)}
-.c-art{position:relative;margin:0;aspect-ratio:4/3.6;background:var(--coral);overflow:hidden;border:2px solid var(--paper)}
-.c-art::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:70%;background:var(--ink);border-radius:50% 50% 0 0}
-.c-art img{position:absolute;left:50%;bottom:0;height:104%;width:auto;max-width:none;transform:translateX(-50%)}
-.c-sub{font-size:11px;background:var(--paper);color:var(--wood);padding:4px 8px;margin:-8px 0 0}
-.c-sub i{color:var(--ink)}
-.c-ability{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 8px;align-items:baseline;padding:4px}
-.c-tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--coral);color:var(--ink);padding:2px 8px}
-.c-ability b{font-size:16px;color:var(--coral)}
-.c-ability p{grid-column:1/-1;font-size:12px;line-height:1.45}
-.c-attack{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px 4px;border-top:1px solid var(--wood)}
-.c-attack b{font-size:15px}
-.c-cost{display:flex;gap:4px}
-.c-cost i{width:14px;height:14px;border-radius:50%;background:var(--coral);box-shadow:inset 0 0 0 3px var(--ink),0 0 0 1px var(--coral)}
-.c-dmg{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums}
-.c-wrr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;border-top:1px solid var(--wood);border-bottom:1px solid var(--wood)}
-.c-wrr div{padding:8px 4px}
-.c-wrr dt{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--on-ink-dim)}
-.c-wrr dd{margin:0;font-size:12px;font-weight:700}
-.c-rule{font-size:12px;font-style:italic;color:var(--sulphur);padding:0 4px}
-.c-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 8px;font-size:11px;color:var(--on-ink-dim);padding:0 4px 4px}
 /* card data panel */
 .tcg-data{display:grid;gap:16px;min-width:0}
 .tcg-name{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;padding:16px 20px;background:var(--ink);color:var(--on-ink)}
@@ -352,7 +323,6 @@ footer a:hover{color:var(--coral)}
 @media (max-width:960px){
 }
 @media (max-width:680px){
-  .tcard{box-shadow:6px 6px 0 var(--coral);margin-right:6px}
   .tcg-row{grid-template-columns:minmax(0,1fr);gap:8px}
   .evo.cards li{aspect-ratio:auto;min-height:160px}
 }
@@ -360,26 +330,6 @@ footer a:hover{color:var(--coral)}
 /* ---------- Leather form: second card in a fantasy-TCG layout (own frame, brand palette) ---------- */
 .mtg{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:var(--col-gap);align-items:start}
 .mtg-stage{position:relative}
-.mcard{--rx:0deg;--ry:0deg;--gx:50%;position:relative;padding:12px 12px 8px;background:var(--ink);color:var(--on-ink);box-shadow:12px 12px 0 var(--coral);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .5s cubic-bezier(.2,.8,.2,1);touch-action:pan-y}
-.mcard.is-live{transition:transform .08s linear}
-.mcard.is-touch{transition:none}
-.m-frame{position:relative;display:grid;gap:8px;padding:8px;background:var(--wood)}
-.m-name,.m-type{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;background:var(--sand);color:var(--ink);border:2px solid var(--ink)}
-.m-name h4{margin:0;font-size:16px;font-weight:700;line-height:1.1}
-.m-cost{display:flex;gap:4px;align-items:center;flex:none}
-.m-cost b,.m-cost i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center}
-.m-cost b{background:var(--grass);font-size:12px;box-shadow:inset 0 0 0 2px var(--ink)}
-.m-cost i{background:var(--coral);box-shadow:inset 0 0 0 2px var(--ink)}
-.m-art{margin:0;aspect-ratio:4/3;overflow:hidden;border:2px solid var(--ink);background:var(--paper)}
-.m-art img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.m-type span:first-child{font-size:13px;font-weight:700}
-.m-set{flex:none;width:20px;height:20px;display:grid;place-items:center;background:var(--coral);color:var(--ink);font-size:11px;font-weight:700;border:2px solid var(--ink)}
-.m-text{display:grid;gap:8px;align-content:start;min-height:170px;padding:12px 12px 32px;background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-size:13px;line-height:1.45}
-.m-text b{font-weight:700}
-.m-flavour{font-style:italic;color:var(--wood);font-size:12px;border-top:1px solid var(--grass);padding-top:8px}
-.m-flavour span{font-style:normal;font-weight:700;margin-left:4px}
-.m-pt{position:absolute;right:16px;bottom:-4px;padding:4px 12px;background:var(--sand);color:var(--ink);border:2px solid var(--ink);font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
-.m-foot{display:flex;justify-content:space-between;gap:8px;padding:12px 4px 0;font-size:11px;color:var(--on-ink-dim)}
 .mtg-fields{margin:0;display:grid;grid-template-columns:150px minmax(0,1fr)}
 .mtg-fields dt,.mtg-fields dd{margin:0;padding-block:12px;border-bottom:1px solid var(--grass)}
 .mtg-fields dt{font-size:13px;font-weight:700;color:var(--wood)}
@@ -389,26 +339,11 @@ footer a:hover{color:var(--coral)}
   .mtg-stage{max-width:380px;width:100%;justify-self:center}
 }
 @media (max-width:680px){
-  .mcard{box-shadow:6px 6px 0 var(--coral);margin-right:6px}
   .mtg-fields{grid-template-columns:110px minmax(0,1fr)}
 }
 
 /* ---------- Night form: borderless legendary card, photo fills the card, frame pieces float over it ---------- */
-.ncard{padding:0;aspect-ratio:63/88;overflow:hidden;background:var(--ink)}
-.n-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:42% 20%}
-.n-name{position:absolute;top:14px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;background:var(--sand);color:var(--ink);border:2px solid var(--ink)}
 /* legendary crown: a notched edge riding on top of the name bar */
-.n-name::before{content:"";position:absolute;left:20%;right:20%;top:-10px;height:10px;background:var(--sand);border:2px solid var(--ink);border-bottom:0;clip-path:polygon(0 100%,6% 0,14% 60%,24% 0,34% 60%,50% 0,66% 60%,76% 0,86% 60%,94% 0,100% 100%)}
-.n-name h4{margin:0;font-size:16px;font-weight:700;line-height:1.1}
-.m-cost i.s{background:var(--sulphur)}
-.m-cost i.p{background:var(--paper)}
-.n-lower{position:absolute;left:12px;right:12px;bottom:12px;display:grid;gap:8px}
-.n-type{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;background:color-mix(in srgb,var(--ink) 88%,transparent);color:var(--on-ink);border:2px solid var(--sand);font-size:13px;font-weight:700}
-.n-text{display:grid;gap:8px;padding:12px;background:color-mix(in srgb,var(--ink) 86%,transparent);color:var(--on-ink);border:2px solid var(--sand);font-size:13px;line-height:1.45}
-.n-pip{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--grass);color:var(--ink);font-size:11px;font-weight:700;vertical-align:-3px}
-.n-bottom{display:flex;justify-content:space-between;align-items:end;gap:8px}
-.n-bottom span:first-child{font-size:11px;line-height:1.35;color:var(--on-ink);background:var(--ink);padding:4px 8px}
-.n-pt{padding:4px 12px;background:var(--sand);color:var(--ink);border:2px solid var(--ink);font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
 
 /* forms row opens the field notes; space before the main card */
 #field-notes .head + .evo-title{margin-top:0}
@@ -428,7 +363,6 @@ footer a:hover{color:var(--coral)}
 .binder-panel[hidden]{display:none}
 .binder-panel .mtg-fields .tcg-moves li{font-size:15px}
 .binder-panel .mtg-fields .tcg-moves .mv{font-weight:400}
-.binder-panel .mtg-stage .tcard{box-shadow:12px 12px 0 var(--coral)}
 .species-block{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--col-gap);align-items:start;margin-top:clamp(56px,7vw,88px);padding-top:clamp(32px,4vw,48px);border-top:2px solid var(--ink)}
 .species-block .tcg-name{margin-bottom:16px}
 .species-block .tcg-row{margin-bottom:4px}
@@ -455,13 +389,8 @@ footer a:hover{color:var(--coral)}
 /* ---------- Foil by rarity (Holo Rare keeps the wide sweep) ---------- */
 
 /* ---------- Hard light: the coral shadow slides opposite the tilt ---------- */
-.tcard,.mcard{box-shadow:var(--sx,12px) var(--sy,12px) 0 var(--coral)}
 .binder-panel .mtg-stage .tcard{box-shadow:var(--sx,12px) var(--sy,12px) 0 var(--coral)}
-.tcard,.mcard{transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s cubic-bezier(.2,.8,.2,1)}
-.tcard.is-live,.mcard.is-live{transition:transform .08s linear,box-shadow .08s linear}
-.tcard.is-touch,.mcard.is-touch{transition:none}
 @media (max-width:680px){
-  .tcard,.mcard,.binder-panel .mtg-stage .tcard{box-shadow:calc(var(--sx,12px) / 2) calc(var(--sy,12px) / 2) 0 var(--coral)}
   .card-back{box-shadow:inset 0 0 0 8px var(--ink),inset 0 0 0 12px var(--coral),6px 6px 0 var(--coral)}
   .cb-logo{width:120px;top:18px;right:18px}
 }
@@ -491,9 +420,45 @@ footer a:hover{color:var(--coral)}
 .after-list{margin-top:32px}
 .inbox.solo{border-bottom:0;padding-top:0}
 .follow-head{margin-top:clamp(32px,5vw,48px)}
-.c-art img.photo{left:0;bottom:auto;top:0;width:100%;height:100%;transform:none;object-fit:cover;object-position:30% 20%}
-.c-wrr.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-.m-move{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.m-move small{font-size:11px;font-style:italic;margin-right:auto}
-.m-move span{font-weight:700;font-variant-numeric:tabular-nums}
-.n-text .m-flavour{color:var(--on-ink-dim)}
+
+
+/* ---------- Form cards: one anatomy for all three (name bar, art, type bar, text box, footer). Only the frame changes: Studio ink with coral edge, Day wood, Night full art. ---------- */
+.fc{--rx:0deg;--ry:0deg;--gx:50%;position:relative;aspect-ratio:63/88;display:flex;flex-direction:column;gap:8px;padding:12px;background:var(--ink);color:var(--on-ink);border:2px solid var(--ink);overflow:hidden;touch-action:pan-y;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry))}
+.fc > :not(.fc-art){position:relative;z-index:1}
+.fc-studio{border-color:var(--coral)}
+.fc-day{background:var(--wood)}
+.fc-name,.fc-type{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;background:var(--sand);color:var(--ink);border:2px solid var(--ink)}
+.fc-name h4{margin:0;font-size:16px;font-weight:700;line-height:1.1}
+.fc-type span:first-child{font-size:13px;font-weight:700}
+.fc-pips{display:flex;gap:4px;flex:none}
+.fc-pips i{width:16px;height:16px;border-radius:50%;background:var(--coral);box-shadow:inset 0 0 0 2px var(--ink)}
+.fc-pips i.s{background:var(--sulphur)}
+.fc-pips i.p{background:var(--paper)}
+.fc-rarity{flex:none;width:20px;height:20px;display:grid;place-items:center;background:var(--coral);color:var(--ink);font-size:11px;font-weight:700;border:2px solid var(--ink)}
+.fc-art{flex:1 1 0;min-height:0;margin:0;overflow:hidden;border:2px solid var(--ink);background:var(--paper)}
+.fc-art img{width:100%;height:100%;object-fit:cover}
+.fc-text{display:grid;gap:6px;padding:10px 12px;background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-size:13px;line-height:1.4}
+.fc-tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--coral);color:var(--ink);padding:1px 6px;margin-right:2px}
+.fc-move{display:flex;align-items:baseline;gap:8px;padding-top:6px;border-top:1px solid var(--grass)}
+.fc-move small{font-size:11px;font-style:italic;color:var(--wood)}
+.fc-move span{margin-left:auto;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}
+.fc-flavour{font-size:12px;font-style:italic;color:var(--wood);padding-top:6px;border-top:1px solid var(--grass)}
+.fc-foot{display:grid;gap:2px;font-size:11px;line-height:1.35;color:var(--on-ink-dim)}
+.fc-day .fc-foot{color:var(--on-ink)}
+/* Night: borderless legendary, photo fills the card, crown on the name bar */
+.fc-night{border-color:var(--sulphur)}
+.fc-night .fc-art{position:absolute;inset:0;border:0}
+.fc-night .fc-name{margin-top:8px}
+.fc-night .fc-type{margin-top:auto}
+.fc-night .fc-foot{padding:6px 8px;background:var(--ink);color:var(--on-ink)}
+.fc-night .fc-name::before{content:"";position:absolute;left:20%;right:20%;top:-10px;height:10px;background:var(--sand);border:2px solid var(--ink);border-bottom:0;clip-path:polygon(0 100%,6% 0,14% 60%,24% 0,34% 60%,50% 0,66% 60%,76% 0,86% 60%,94% 0,100% 100%)}
+@media (max-width:680px){
+  .fc{margin-right:6px}
+}
+/* shared coral drop shadow that moves with the tilt */
+.fc{box-shadow:var(--sx,12px) var(--sy,12px) 0 var(--coral);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s cubic-bezier(.2,.8,.2,1)}
+.fc.is-live{transition:transform .08s linear,box-shadow .08s linear}
+.fc.is-touch{transition:none}
+@media (max-width:680px){
+  .fc{box-shadow:calc(var(--sx,12px) / 2) calc(var(--sy,12px) / 2) 0 var(--coral)}
+}
