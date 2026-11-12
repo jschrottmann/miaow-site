@@ -18,8 +18,8 @@
 html{scroll-behavior:smooth}
 html,body{overflow-x:clip}
 /* one-page: anchored sections land below the sticky header */
-main [id]{scroll-margin-top:84px}
-@media (max-width:680px){main [id]{scroll-margin-top:104px}}
+main [id]{scroll-margin-top:96px}
+@media (max-width:680px){main [id]{scroll-margin-top:116px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--font);-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
@@ -45,14 +45,18 @@ p{margin:0}
 
 /* ---------- Header: nav left, wordmark top right (brand rule) ---------- */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--ink);color:var(--on-ink)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
 .nav{display:flex;gap:clamp(16px,2.4vw,32px);overflow-x:auto;scrollbar-width:none;min-width:0}
 .nav::-webkit-scrollbar{display:none}
 .nav a{font-size:12px;font-weight:700;letter-spacing:.05em;text-decoration:none;white-space:nowrap;padding-block:16px;border-bottom:2px solid transparent}
 .nav a:hover,.nav a[aria-current]{border-color:var(--coral)}
 .nav a[aria-current]{color:var(--coral)}
-.mark{flex:none;display:block;padding:12px 0}
-.mark img{width:132px;height:auto}
+.mark{flex:none;display:block;padding:10px 0;outline-offset:6px}
+.mark img{display:block;width:176px;height:auto;transform-origin:50% 70%;transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s cubic-bezier(.2,.8,.2,1)}
+/* logo hover: a pounce plus a coral and sulphur print-misregistration echo, the same hard offset the cards use */
+.mark:hover img,.mark:focus-visible img{transform:translate(-3px,-3px) rotate(-3deg) scale(1.04);filter:drop-shadow(3px 3px 0 var(--coral)) drop-shadow(3px 3px 0 var(--sulphur))}
+.mark:active img{transform:translate(0,0) rotate(0) scale(.98);transition-duration:.1s}
+@media (prefers-reduced-motion:reduce){.mark img{transition:filter .2s}.mark:hover img,.mark:focus-visible img{transform:none}}
 
 /* ---------- Buttons ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:12px 24px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:2px solid var(--coral);background:var(--coral);color:var(--ink);transition:transform .15s,box-shadow .15s}
@@ -221,7 +225,7 @@ footer a:hover{color:var(--coral)}
   /* phone header: logo row (still top right), then all six links on one row so none hide off-screen */
   .top .wrap{height:auto;flex-wrap:wrap;gap:0;padding-block:8px 0}
   .mark{order:-1;margin-left:auto;padding:8px 0}
-  .mark img{width:120px}
+  .mark img{width:144px}
   .nav{width:100%;justify-content:space-between;gap:0;border-top:1px solid var(--wood)}
   .nav a{font-size:11px;letter-spacing:.05em;padding-block:12px}
   .cols,.inboxes{grid-template-columns:minmax(0,1fr)}
@@ -429,7 +433,7 @@ footer a:hover{color:var(--coral)}
 .fc-studio{border-color:var(--coral)}
 .fc-day{background:var(--wood)}
 .fc-name,.fc-type{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;background:var(--sand);color:var(--ink);border:2px solid var(--ink)}
-.fc-name h4{margin:0;font-size:16px;font-weight:700;line-height:1.1}
+.fc-name h3{margin:0;font-size:16px;font-weight:700;line-height:1.1}
 .fc-type span:first-child{font-size:13px;font-weight:700}
 .fc-pips{display:flex;gap:4px;flex:none}
 .fc-pips i{width:16px;height:16px;border-radius:50%;background:var(--coral);box-shadow:inset 0 0 0 2px var(--ink)}
@@ -478,9 +482,7 @@ footer a:hover{color:var(--coral)}
 .fc-night .fc-bg::before,.fc-night .fc-bg::after{content:"";position:absolute;inset:0}
 .fc-night .fc-bg::before{background:repeating-conic-gradient(from -4deg at 62% 30%,var(--coral) 0 5deg,transparent 5deg 13deg);-webkit-mask-image:radial-gradient(circle at 62% 30%,var(--ink) 0 18%,transparent 62%);mask-image:radial-gradient(circle at 62% 30%,var(--ink) 0 18%,transparent 62%)}
 .fc-night .fc-bg::after{background:
-  radial-gradient(circle,transparent 0 5px,color-mix(in srgb,var(--sand) 40%,transparent) 5px 6px,transparent 6px 11px,color-mix(in srgb,var(--sand) 40%,transparent) 11px 12px,transparent 12px 17px,color-mix(in srgb,var(--sand) 40%,transparent) 17px 18px,transparent 18px) 0 0/44px 44px,
-  repeating-linear-gradient(0deg,color-mix(in srgb,var(--sand) 22%,transparent) 0 1px,transparent 1px 44px) 0 -1px/100% 44px,
-  repeating-linear-gradient(90deg,color-mix(in srgb,var(--sand) 22%,transparent) 0 1px,transparent 1px 44px) -1px 0/44px 100%;
+  radial-gradient(circle,transparent 0 5px,color-mix(in srgb,var(--sand) 40%,transparent) 5px 6px,transparent 6px 11px,color-mix(in srgb,var(--sand) 40%,transparent) 11px 12px,transparent 12px 17px,color-mix(in srgb,var(--sand) 40%,transparent) 17px 18px,transparent 18px) 0 0/44px 44px;
   -webkit-mask-image:linear-gradient(90deg,var(--ink) 0 22%,transparent 34% 78%,var(--ink) 90%);mask-image:linear-gradient(90deg,var(--ink) 0 22%,transparent 34% 78%,var(--ink) 90%)}
 .fc-night .fc-pop{position:absolute;left:5%;bottom:0;width:115%;max-width:none;height:auto;z-index:3;pointer-events:none;transform:translate(calc(var(--px) * .5px),calc(var(--py) * -.5px))}
 .fc-night .fc-type,.fc-night .fc-text,.fc-night .fc-foot{z-index:4}
