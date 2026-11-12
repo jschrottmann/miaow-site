@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=05815b9f">
+<link rel="stylesheet" href="styles.css?v=6d85dd13">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -368,7 +368,7 @@
       </div>
       <div class="mail">
         <code id="email">contact@miaow.world</code>
-        <button class="copy" id="copy" type="button">Copy</button>
+        <div class="mail-actions"><a class="btn" href="mailto:contact@miaow.world?subject=Booking%20enquiry">Book Miaow</a><button class="copy" id="copy" type="button">Copy email</button></div>
       </div>
     </div>
   </section>
@@ -384,7 +384,7 @@
 <script>
 document.getElementById('copy').addEventListener('click', function () {
   var btn = this, el = document.getElementById('email');
-  function done(m){ btn.textContent = m; setTimeout(function(){ btn.textContent = 'Copy'; }, 1800); }
+  function done(m){ btn.textContent = m; setTimeout(function(){ btn.textContent = 'Copy email'; }, 1800); }
   function selectIt(){ var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); }
   try { navigator.clipboard.writeText(el.textContent).then(function(){ done('Copied'); }, selectIt); } catch (e) { selectIt(); }
 });

@@ -190,10 +190,11 @@ p{margin:0}
 .book{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--col-gap);align-items:end}
 .book h2{font-size:clamp(44px,8vw,104px);color:var(--coral)}
 .book p{color:var(--on-ink-dim);margin-top:16px;max-width:52ch}
-.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mail{display:grid;gap:16px;justify-items:start}
+.mail-actions{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
 .mail code{font:700 clamp(18px,2.2vw,24px)/1.2 var(--font);color:var(--on-ink);user-select:all;word-break:break-all}
-.copy{font:700 12px var(--font);letter-spacing:.05em;text-transform:uppercase;padding:16px 20px;background:transparent;color:var(--on-ink);border:2px solid var(--on-ink);cursor:pointer}
-.copy:hover{border-color:var(--coral);color:var(--coral)}
+.copy{font:700 12px var(--font);letter-spacing:.05em;text-transform:uppercase;min-height:44px;padding:12px 0;background:transparent;color:var(--on-ink);border:0;text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:2px;text-underline-offset:4px;cursor:pointer}
+.copy:hover{color:var(--coral)}
 
 /* ---------- Footer ---------- */
 footer{background:var(--ink);color:var(--on-ink-dim);border-top:1px solid var(--wood)}
