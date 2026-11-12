@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=2996baef">
+<link rel="stylesheet" href="styles.css?v=dd24fe1b">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -122,7 +122,8 @@
 <div class="flip">
           <article class="mcard fc fc-night" data-tilt aria-label="Miaow, Night Form trading card">
             <header class="fc-name"><h4>Miaow, Night Form</h4><span class="fc-pips" aria-hidden="true"><i></i><i class="s"></i><i class="p"></i></span></header>
-            <figure class="fc-art"><img src="assets/form-night.jpg" alt="Miaow in an oversized leather blazer and purple leather trousers, seated against a red wall" style="object-position:50% 0" loading="lazy" decoding="async"></figure>
+            <div class="fc-art fc-bg" aria-hidden="true"></div>
+            <img class="fc-pop" src="assets/form-night-cutout.webp" alt="Miaow in an oversized leather blazer and purple leather trousers, seated on a leather stool" loading="lazy" decoding="async">
             <div class="fc-type"><span>Shapeshifter Raver</span><span class="fc-rarity" aria-label="Mythic rare">M</span></div>
             <div class="fc-text">
               <p><span class="fc-tag">Ability</span> <b>Shapeshift.</b> Bass, open format, commercial, house or bigroom. Whatever the room needs.</p>
@@ -431,6 +432,8 @@ document.querySelectorAll('[data-tilt]').forEach(function (card) {
     card.style.setProperty('--gx', gx.toFixed(1) + '%');
     card.style.setProperty('--sx', (12 - ry * 0.9).toFixed(1) + 'px');
     card.style.setProperty('--sy', (12 + rx * 0.9).toFixed(1) + 'px');
+    card.style.setProperty('--px', ry.toFixed(2));
+    card.style.setProperty('--py', rx.toFixed(2));
   }
   function fromPoint(x, y) {
     var r = card.getBoundingClientRect(), px = (x - r.left) / r.width, py = (y - r.top) / r.height;
